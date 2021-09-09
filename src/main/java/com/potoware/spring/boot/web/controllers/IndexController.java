@@ -1,5 +1,8 @@
 package com.potoware.spring.boot.web.controllers;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,9 +29,22 @@ public class IndexController {
 		
 		usuario.setNombre("Alejandro");
 		usuario.setApellido("Potosi");
+		usuario.setEmail("apotosi@asesoftware.com");
 		model.addAttribute("usuario", usuario);
 		model.addAttribute("titulo", "Hola Sr ".concat(usuario.getApellido()));
 		return "perfil";
+	}
+	
+	@RequestMapping("/listar")
+	public String listar(Model model) {
+		Usuario usuario = new Usuario();
+		usuario.setNombre("Alejandro");
+		usuario.setApellido("Potosi");
+		usuario.setEmail("apotosi@asesoftware.com");
+		List<Usuario> usuarios = new ArrayList<>();
+		model.addAttribute("usuarios", usuarios);
+		model.addAttribute("titulo", "Hola Sr ".concat(usuario.getApellido()));
+		return "listar";
 	}
 
 }

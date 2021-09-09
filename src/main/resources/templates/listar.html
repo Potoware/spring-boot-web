@@ -6,9 +6,6 @@
 </head>
 <body>
 <h1 th:text="${titulo}">a</h1>
-<span th:text="${usuario.nombre}"></span>
-<span th:text="${usuario.apellido}"></span>
-
-<span th:if"${usuario.email}"th:text="${usuario.email}"></span>
+<span th:if="${usuarios.size}==0">Bro ... no hay usuarios</span>
 </body>
 </html>
