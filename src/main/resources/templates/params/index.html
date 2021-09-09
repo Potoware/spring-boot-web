@@ -15,6 +15,11 @@
 </li>
 <li><a th:href="@{/params/string(name='Esto sirve para enviar url desde el codigo')}">Explicame</a>
 </li>
+<li><a th:href="@{/params/mix-params(saludo='Alejandro',numero=09)}">Otro ejemplo enviar datos con 2 parametros</a>
+</li>
+
+<li><a th:href="@{/params/mix-params-request(saludo='Alejandro',numero=09)}">Otro ejemplo enviar datos con 2 parametros con HTTPServlet</a>
+</li>
 <ul>
 
 </body>
