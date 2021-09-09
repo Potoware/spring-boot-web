@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.potoware.spring.boot.web.model.Usuario;
@@ -41,13 +42,18 @@ public class IndexController {
 		usuario.setNombre("Alejandro");
 		usuario.setApellido("Potosi");
 		usuario.setEmail("apotosi@asesoftware.com");
+		model.addAttribute("titulo", "Hola Sr ".concat(usuario.getApellido()));
+		return "listar";
+	}
+	
+	@ModelAttribute("usuarios")
+	public List<Usuario> poblaUsuarios(){
 		List<Usuario> usuarios = new ArrayList<>();
 		usuarios.add(new Usuario ("Andres","Camargo","acamargo@camargo.com"));
 		usuarios.add(new Usuario("Alejandro", "Potosi", "apotosi@potoware.com"));
 		usuarios.add(new Usuario("Rocky", "Sucio", "rsucio@potoware.com"));
-		model.addAttribute("usuarios", usuarios);
-		model.addAttribute("titulo", "Hola Sr ".concat(usuario.getApellido()));
-		return "listar";
+		
+		return usuarios;
 	}
 
 }
