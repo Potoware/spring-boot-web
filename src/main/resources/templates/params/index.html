@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title >Enviar parametro get rquest</title>
+</head>
+<body>
+<h1 >Enviar parametro get rquest</h1>
+<ul>
+<li>
+<a th:href="@{/params/string(name='Potoware Send Param')}">Generar Nombre</a>
+</li>
+<li>
+<a th:href="@{/params/string(name='Holiwi')}">Generar saludo</a>
+</li>
+<li><a th:href="@{/params/string(name='Esto sirve para enviar url desde el codigo')}">Explicame</a>
+</li>
+<ul>
+
+</body>
+</html>
