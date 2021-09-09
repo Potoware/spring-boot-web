@@ -42,6 +42,9 @@ public class IndexController {
 		usuario.setApellido("Potosi");
 		usuario.setEmail("apotosi@asesoftware.com");
 		List<Usuario> usuarios = new ArrayList<>();
+		usuarios.add(new Usuario ("Andres","Camargo","acamargo@camargo.com"));
+		usuarios.add(new Usuario("Alejandro", "Potosi", "apotosi@potoware.com"));
+		usuarios.add(new Usuario("Rocky", "Sucio", "rsucio@potoware.com"));
 		model.addAttribute("usuarios", usuarios);
 		model.addAttribute("titulo", "Hola Sr ".concat(usuario.getApellido()));
 		return "listar";
